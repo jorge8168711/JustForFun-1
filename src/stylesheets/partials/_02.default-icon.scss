@@ -1,3 +1,54 @@
 /************************************
  * DEFAULT ICON STYLES
 /************************************/
+
+// convert pixels to em
+@function em($target, $context: $base-font-size) {
+  @return ($target / $context) * 1em;
+}
+
+.camera {
+  font-size: 1rem;
+
+  &, &__body {
+    position: relative
+  }
+
+  // CAMERA BODY
+  &__body {
+    background-color: #E3E6E5;
+    border-radius: 5px;
+    box-shadow: $z-1;
+
+    height: em(75px);
+    width: em(105px);
+
+    &::after, &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    // top rectangle
+    &::after {
+      background-color: #BEC5CA;
+      width: em(22px);
+      height: em(12px);
+
+      top: em(-11px);
+      left: em(12px);
+    }
+
+    // left rectangle
+    &::before {
+      background-color: #B4BCC2;
+      width: em(12px);
+      height: em(26px);
+
+      left: em(-12px);
+      top: em(40px);
+    }
+  }
+}

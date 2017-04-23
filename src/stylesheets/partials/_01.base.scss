@@ -5,8 +5,17 @@
   box-sizing: border-box;
 }
 
+html, body, .wrapper {
+  height: 100%;
+}
 
 body {
   font-family: $sans-serif-font;
   font-size: $base-font-size;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
