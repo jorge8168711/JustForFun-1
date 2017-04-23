@@ -31,11 +31,11 @@
       content: "";
       position: absolute;
       display: block;
-      border-radius: 2px;
       z-index: -1;
     }
     // top rectangle
     &::after {
+      border-radius: 2px 2px 0 0;
       background-color: #BEC5CA;
       width: em(22px);
       height: em(12px);
@@ -45,6 +45,7 @@
     }
     // left rectangle
     &::before {
+      border-radius: 2px 0 0 2px;
       background-color: #B4BCC2;
       width: em(12px);
       height: em(26px);
@@ -81,4 +82,20 @@
       margin-right: em(4px);
     }
   }
+
+  // CAMERA SUPPORT
+  &__support {
+    background-color: #5F686D;
+    border-radius: 8px 8px 0 0;
+
+    height: em(16px);
+    width: em(64px);
+
+    top: em(-15px);
+    left: em(38px);
+
+    z-index: -1;
+  }
+
+
 }
