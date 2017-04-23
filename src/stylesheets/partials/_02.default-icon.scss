@@ -7,6 +7,10 @@
   @return ($target / $context) * 1em;
 }
 
+.abs {
+  position: absolute;
+}
+
 .camera {
   font-size: 1rem;
 
@@ -19,10 +23,10 @@
     background-color: #E3E6E5;
     border-radius: 5px;
     box-shadow: $z-1;
-
     height: em(75px);
     width: em(105px);
 
+    // top left rectangle
     &::after, &::before {
       content: "";
       position: absolute;
@@ -30,7 +34,6 @@
       border-radius: 2px;
       z-index: -1;
     }
-
     // top rectangle
     &::after {
       background-color: #BEC5CA;
@@ -40,7 +43,6 @@
       top: em(-11px);
       left: em(12px);
     }
-
     // left rectangle
     &::before {
       background-color: #B4BCC2;
@@ -49,6 +51,34 @@
 
       left: em(-12px);
       top: em(40px);
+    }
+  }
+
+  // CAMERA DISPLAY
+  &__display {
+    background-color: #677074;
+    box-shadow: $z-1;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    left: em(10px);
+    top: em(10px);
+
+    height: em(30px);
+    width: em(30px);
+
+    // display
+    &::after {
+      content: "";
+      border-radius: 2px;
+      background-color: #A1D270;
+
+      height: em(20px);
+      width: em(15px);
+      margin-right: em(4px);
     }
   }
 }
