@@ -97,5 +97,18 @@
     z-index: -1;
   }
 
+  // CAMERA CIRCLE
+  &__circle {
+    background-color: #fff;
+    box-shadow: $z-1;
+    border-radius: 50%;
+
+    left: em(16px);
+    top: em(46px);
+    height: em(19px);
+    width: em(19px);
+  }
+
+
 
 }
