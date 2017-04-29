@@ -7,12 +7,21 @@
   @return ($target / $context) * 1em;
 }
 
+[class^="camera__"] {
+  transition: all .15s linear;
+}
+*::after,
+*::before {
+  content: "";
+}
+
 .abs {
   position: absolute;
 }
 
 .camera {
   font-size: 1rem;
+  margin-left: 40px;
 
   &, &__body {
     position: relative
@@ -28,7 +37,6 @@
 
     // top left rectangle
     &::after, &::before {
-      content: "";
       position: absolute;
       display: block;
       z-index: -1;
@@ -57,7 +65,7 @@
 
   // CAMERA DISPLAY
   &__display {
-    background-color: #677074;
+    background-color:rgb(105, 115, 118);
     box-shadow: $z-1;
     border-radius: 5px;
 
@@ -73,7 +81,6 @@
 
     // display
     &::after {
-      content: "";
       border-radius: 2px;
       background-color: #A1D270;
 
@@ -85,7 +92,7 @@
 
   // CAMERA SUPPORT
   &__support {
-    background-color: #5F686D;
+    background-color: rgb(97,106,111);
     border-radius: 8px 8px 0 0;
 
     height: em(16px);
@@ -109,6 +116,91 @@
     width: em(19px);
   }
 
+  // CAMERA LENS
+  &__lens {
+    border-top: em(1px) solid rgba(white, .25);
+    background-color: rgb(92,102,106);
+    box-shadow: $z-1;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    left: em(45px);
+    top: em(-5px);
+
+    height: em(65px);
+    width: em(65px);
+
+    &, &::after {
+      border-radius: 5px;
+    }
+
+    // lens
+    &::before,
+    &::after {
+      height: em(55px);
+      width: em(55px);
+    }
+
+    // squere len
+    &::after {
+      position: relative;
+      background-color: rgb(112, 125, 134);
+    }
+
+    // round len
+    &::before {
+      @extend .abs;
+      border-radius: 50%;
+      border-top: em(1px) solid rgba(white, .15);
+      border-left: em(1px) solid rgba(white, .15);
+      border-right: em(1px) solid rgba(white, .15);
+      background-color:rgb(144, 154, 162);
+
+      position: absolute;
+      left: em(5px);
+      top: em(5px);
+      z-index: 1;
+    }
+  }
+
+  // INNER LENNS AND SHINE
+  &__inner-lens {
+    height: em(35px);
+    width: em(35px);
+    border-radius: 50%;
+    background-color: #5E6C77;
+    z-index: 1;
+    // general style
+    &::before,
+    &::after {
+      @extend .abs;
+      border-radius: 50%;
+      left: 50%;
+      z-index: 1;
+    }
+
+    // inner len
+    &::before {
+      transform: translate(-50%, -50%);
+      top: 50%;
+      height: em(25px);
+      width: em(25px);
+      background-color: #4B555A;
+    }
+
+    // inner shine
+    &::after {
+      height: em(10px);
+      width: em(15px);
+      background-color: rgba(white, .2);
+      top: em(2px);
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+  }
 }
