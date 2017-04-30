@@ -6,19 +6,20 @@
   position: relative;
   width: 260px;
 
-  &::after {
-    @extend .abs;
-    right: 0;
-    height: 1px;
-    width: 75%;
-    background-color: #ABC89F;
-  }
-
   &__text {
     text-align: right;
     line-height: 1.5;
     margin-bottom: 10px;
     color: rgba(#767676, .85);
+
+    &::after {
+      @extend .abs;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      width: 75%;
+      background-color: #ABC89F;
+    }
   }
 
   &__link {
@@ -34,6 +35,26 @@
     color: #767676;
     text-decoration: none;
     transition: background-color .2s $easing-in;
+  }
+
+  &__socials {
+    bottom: -30px;
+    right: 0;
+  }
+
+  &__socials-link {
+    text-decoration: none;
+    padding: 10px 0;
+  }
+
+  &__socials-icon {
+    fill: #767676;
+    opacity: .7;
+    transition: all .25s $standard-curve;
+  }
+
+  &__socials-icon:hover {
+    opacity: 1;
   }
 
   @media screen and (max-width: 500px) {
