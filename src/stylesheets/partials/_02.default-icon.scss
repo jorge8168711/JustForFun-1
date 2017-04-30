@@ -1,0 +1,206 @@
+/************************************
+ * DEFAULT ICON STYLES
+/************************************/
+
+// convert pixels to em
+@function em($target, $context: $base-font-size) {
+  @return ($target / $context) * 1em;
+}
+
+[class^="camera__"] {
+  transition: all .15s linear;
+}
+*::after,
+*::before {
+  content: "";
+}
+
+.abs {
+  position: absolute;
+}
+
+.camera {
+  font-size: 1rem;
+  margin-left: 40px;
+
+  &, &__body {
+    position: relative
+  }
+
+  // CAMERA BODY
+  &__body {
+    background-color: #E3E6E5;
+    border-radius: 5px;
+    box-shadow: $z-1;
+    height: em(75px);
+    width: em(105px);
+
+    // top left rectangle
+    &::after, &::before {
+      position: absolute;
+      display: block;
+      z-index: -1;
+    }
+    // top rectangle
+    &::after {
+      border-radius: 2px 2px 0 0;
+      background-color: #BEC5CA;
+      width: em(22px);
+      height: em(12px);
+
+      top: em(-11px);
+      left: em(12px);
+    }
+    // left rectangle
+    &::before {
+      border-radius: 2px 0 0 2px;
+      background-color: #B4BCC2;
+      width: em(12px);
+      height: em(26px);
+
+      left: em(-12px);
+      top: em(40px);
+    }
+  }
+
+  // CAMERA DISPLAY
+  &__display {
+    background-color:rgb(105, 115, 118);
+    box-shadow: $z-1;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    left: em(10px);
+    top: em(10px);
+
+    height: em(30px);
+    width: em(30px);
+
+    // display
+    &::after {
+      border-radius: 2px;
+      background-color: #A1D270;
+
+      height: em(20px);
+      width: em(15px);
+      margin-right: em(4px);
+    }
+  }
+
+  // CAMERA SUPPORT
+  &__support {
+    background-color: rgb(97,106,111);
+    border-radius: 8px 8px 0 0;
+
+    height: em(16px);
+    width: em(64px);
+
+    top: em(-15px);
+    left: em(38px);
+
+    z-index: -1;
+  }
+
+  // CAMERA CIRCLE
+  &__circle {
+    background-color: #fff;
+    box-shadow: $z-1;
+    border-radius: 50%;
+
+    left: em(16px);
+    top: em(46px);
+    height: em(19px);
+    width: em(19px);
+  }
+
+  // CAMERA LENS
+  &__lens {
+    border-top: em(1px) solid rgba(white, .25);
+    background-color: rgb(92,102,106);
+    box-shadow: $z-1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    left: em(45px);
+    top: em(-5px);
+
+    height: em(65px);
+    width: em(65px);
+
+    &, &::after {
+      border-radius: 5px;
+    }
+
+    // lens
+    &::before,
+    &::after {
+      height: em(55px);
+      width: em(55px);
+    }
+
+    // squere len
+    &::after {
+      position: relative;
+      background-color: rgb(112, 125, 134);
+    }
+
+    // round len
+    &::before {
+      @extend .abs;
+      border-radius: 50%;
+      border-top: em(1px) solid rgba(white, .15);
+      border-left: em(1px) solid rgba(white, .15);
+      border-right: em(1px) solid rgba(white, .15);
+      background-color:rgb(144, 154, 162);
+
+      position: absolute;
+      left: em(5px);
+      top: em(5px);
+      z-index: 1;
+    }
+  }
+
+  // INNER LENNS AND SHINE
+  &__inner-lens {
+    height: em(35px);
+    width: em(35px);
+    border-radius: 50%;
+    background-color: #5E6C77;
+    z-index: 1;
+    // general style
+    &::before,
+    &::after {
+      @extend .abs;
+      border-radius: 50%;
+      left: 50%;
+      z-index: 1;
+    }
+
+    // inner len
+    &::before {
+      transform: translate(-50%, -50%);
+      top: 50%;
+      height: em(25px);
+      width: em(25px);
+      background-color: #4B555A;
+    }
+
+    // inner shine
+    &::after {
+      height: em(10px);
+      width: em(15px);
+      background-color: rgba(white, .2);
+      top: em(2px);
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+  }
+}

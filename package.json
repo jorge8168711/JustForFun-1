@@ -1,0 +1,11 @@
+{
+  "name": "JustForFun-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jorge8168711/JustForFun-1.git",
+  "author": "Jorge Eduardo <jorgeb8168711@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "normalize-scss": "^6.0.0"
+  }
+}

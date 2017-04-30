@@ -1,0 +1,17 @@
+/************************************
+ * CONFIG FILE
+/************************************/
+@import "_config";
+
+
+/************************************
+ * Normalize
+/************************************/
+@import "../../node_modules/normalize-scss/sass/_normalize.scss";
+@include normalize();
+
+
+/************************************
+ * PROJECT PARTIALS
+/************************************/
+ @import "partials/00.all"

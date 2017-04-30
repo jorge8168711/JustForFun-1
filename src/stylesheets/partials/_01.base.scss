@@ -1,0 +1,27 @@
+/************************************
+ * BASE STYLES
+/************************************/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, .wrapper {
+  height: 100%;
+  color: #767676;
+}
+
+body {
+  font-family: $sans-serif-font;
+  font-size: $base-font-size;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+
