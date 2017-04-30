@@ -17,7 +17,7 @@
   &__text {
     text-align: right;
     line-height: 1.5;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: rgba(#767676, .85);
   }
 
@@ -27,25 +27,13 @@
     text-decoration: none;
     font-size: 17px;
     transition: color .15s $easing-out;
-
-    &:hover {
-      color: rgba(#767676, 1);
-      transition: color .2s $easing-in;
-    }
   }
 
   &__name {
-    background-color: rgba(#767676, .09);
-    border-radius: 2px;
     font-size: 13px;
     color: #767676;
-    padding: 2px 10px;
     text-decoration: none;
     transition: background-color .2s $easing-in;
-
-    &:hover {
-      background-color: rgba(#767676, 0.12);
-    }
   }
 
   @media screen and (max-width: 500px) {
